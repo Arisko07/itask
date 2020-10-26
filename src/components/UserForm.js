@@ -26,12 +26,12 @@ export function UserForm( props ) {
         <div className='contact-container'>
           <h2>Contact Information</h2>
           <p>Phone #: {data.phone}</p>
-          <p>Website: {data.website}</p>
+          <p>Website: https://www.{data.website}</p>
         </div>
       )}
       <div className="button-container">
       <button key={data.id} type="button" onClick={handleShow}>
-            {show ? 'close' : 'Contanct Information' }
+            {show ? 'close' : 'Contact Information' }
       </button> 
       </div>
     </div>
