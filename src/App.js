@@ -18,7 +18,6 @@ class App extends React.Component {
   handleFilter = (e) => {
     let names = e.target.name
     let value = e.target.value;
-    console.log(this.state.filters)
     this.setState(prevState => {
       let filters = Object.assign({}, prevState.filters);
       filters[names] = value;
