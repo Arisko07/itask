@@ -7,7 +7,8 @@ export function UserForm( props ) {
   const {
     data,
     show,
-    handleShow
+    handleShow,
+    targetId
 	} = props;
 
   // render
@@ -22,7 +23,7 @@ export function UserForm( props ) {
         <p >{data.company.catchPhrase}</p>
         <p >{data.company.bs}</p>
       </form>
-      {show && (
+      {(show && targetId==data.id)&&(
         <div className='contact-container'>
           <h2>Contact Information</h2>
           <p>Phone #: {data.phone}</p>
@@ -30,8 +31,8 @@ export function UserForm( props ) {
         </div>
       )}
       <div className="button-container">
-      <button key={data.id} type="button" onClick={handleShow}>
-            {show ? 'close' : 'Contact Information' }
+      <button id={data.id} type="button" onClick={handleShow}>
+            {show && targetId==data.id ? 'close' : 'Contact Information' }
       </button> 
       </div>
     </div>

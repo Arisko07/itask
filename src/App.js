@@ -6,7 +6,8 @@ class App extends React.Component {
   state = { 
     data:[],
     filters:{name:'',userName:'',emailAddress:''},
-    show:false
+    show:false,
+    targetID:''
   };
   
   componentDidMount() {
@@ -25,7 +26,6 @@ class App extends React.Component {
     })
   };
   applyFilters = (originalData) => {
-    console.log(originalData)
     const {filters:filters} = this.state;
     const filteredParcels = originalData.filter((str)=>{
       return  str.name.toLowerCase().indexOf(filters.name.toLowerCase()) >= 0 && 
@@ -34,9 +34,9 @@ class App extends React.Component {
     });
      return filteredParcels;
   };
-  showModal = () => {
+  showModal = (e) => {
     let show = !this.state.show;
-    this.setState({ show: show });
+    this.setState({ show: show,targetID:e.target.id});
   };
   render() {
     const {
@@ -69,9 +69,11 @@ class App extends React.Component {
           <div className="summary-details">
             
             {this.applyFilters(data).map((data) => (
-            <UserForm 
+            <UserForm
+              key={data.id}
               data={data}
               show={this.state.show}
+              targetId={this.state.targetID}
               handleShow = {this.showModal}
             ></UserForm>
            ))}
