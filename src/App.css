@@ -1,0 +1,34 @@
+.App {
+ 
+  height: 89.7vh;
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.main-panel{
+  display:flex;
+  text-align: center;
+}
+.summary-details{
+  width: 100%;
+  text-align: left;
+}
+.filters-container{
+  margin-top: 20px;
+}
+.filters-container > label{
+  margin-left: 30px;
+  height: 100px;
+}
